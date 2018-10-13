@@ -32,7 +32,7 @@
           ]
         }, 1500)
       }) 
-    },
+    }
   }
 </script>
 <style scoped>
