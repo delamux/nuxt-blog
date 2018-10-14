@@ -7,7 +7,7 @@
       <h1>Existing Posts</h1>
       <PostList
         :posts="loadedPosts"
-      isAdmin/>
+        isAdmin/>
     </section>
   </div>
 </template>
@@ -21,32 +21,11 @@
       AppButton,
       PostList
     },
-    asyncData(context, callback) {
-      setTimeout(() => {
-        callback(null, {
-            loadedPosts: [
-              {
-                id: '1',
-                author: 'Nikolai',
-                title: 'My awesome Post',
-                thumbnail: 'https://cdn.techinasia.com/wp-content/uploads/2017/06/47724337_l.jpg',
-                previewText: "Top Post",
-                content: 'Super amazing! \n thanks for that!'
-              },
-              {
-                id: '2',
-                author: 'Nikolai',
-                title: 'My awesome Post',
-                thumbnail: 'https://cdn.techinasia.com/wp-content/uploads/2017/06/47724337_l.jpg',
-                previewText: "Top Post",
-                content: 'Super amazing! \n thanks for that!'
-              }
-            ]
-          }
-        )
-      }, 1500)
+    computed: {
+      loadedPosts() {
+        return this.$store.getters.loadedPosts
+      }
     }
- 
   }
 </script>
 <style scoped>
