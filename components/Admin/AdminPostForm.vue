@@ -31,24 +31,24 @@ export default {
 		}
 	},
 	data() {
-			return {
-					editedPost: this.post
-					? {...this.post}
-					: {
-							author: '',
-							title: '',
-							thumbnailLink: '',
-							content: ''
-					}
+		return {
+			editedPost: this.post
+			? {...this.post}
+			: {
+				author: '',
+				title: '',
+				thumbnailLink: '',
+				content: ''
 			}
+		}
 	},
 	methods: {
-			onSave() {
-					console.log(this.editedPost)
-			},
-			onCancel() {
-					this.$router.push('/admin/')
-			}
+		onSave() {
+			this.$emit('submit', this.editedPost)
+		},
+		onCancel() {
+			this.$router.push('/admin/')
+		}
 	}
 }
 </script>
