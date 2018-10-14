@@ -15,14 +15,9 @@
         },
         methods: {
             onSubmitted(postData) {
-                axios.post('https://nuxt-blog-91879.firebaseio.com/posts.json', {
-                    ...postData,
-                    updatedDate: new Date()}
-                )
-                .then(result => {
-                    this.$router.push('/admin')
+                this.$store.dispatch('addPost', postData).then(() => {
+                    this.$router.push('/admin');
                 })
-                .catch(e => console.log(e))
             }
         }
     }
