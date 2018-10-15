@@ -15,7 +15,7 @@
         },
         asyncData(context) {
             return axios
-            .get('https://nuxt-blog-91879.firebaseio.com/posts/' +
+            .get(process.env.baseUrl + '/posts/' +
                 context.params.postId + 
                 '.json'
             )
