@@ -24,7 +24,7 @@ function formatDate(inputDate) {
   const year = date.getFullYear();
   const month = date.getMonth();
   const day = date.getDate();
-  const formattedDate = day + ". " + months[month] + " " + year;
+  const formattedDate = day + " of " + months[month] + " " + year;
   return formattedDate;
 }
 
