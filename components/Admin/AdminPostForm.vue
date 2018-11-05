@@ -20,40 +20,34 @@
 		</form>
 </template>
 <script>
-import AppControlInput from '@/components/UI/AppControlInput'
-import AppButton from '@/components/UI/AppButton'
 export default {
-	components: {
-			AppControlInput,
-			AppButton
-	},
-	props: {
-		post: {
-			type: Object,
-			required: false
-		}
-	},
-	data() {
-		return {
-			editedPost: this.post
-			? {...this.post}
-			: {
-				author: '',
-				title: '',
-				thumbnail: '',
-				content: '',
-				previewText: ''
-			}
-		}
-	},
-	methods: {
-		onSave() {
-			this.$emit('submit', this.editedPost)
-		},
-		onCancel() {
-			this.$router.push('/admin/')
-		}
-	}
-}
+  props: {
+    post: {
+      type: Object,
+      required: false
+    }
+  },
+  data() {
+    return {
+      editedPost: this.post
+        ? { ...this.post }
+        : {
+            author: "",
+            title: "",
+            thumbnail: "",
+            content: "",
+            previewText: ""
+          }
+    };
+  },
+  methods: {
+    onSave() {
+      this.$emit("submit", this.editedPost);
+    },
+    onCancel() {
+      this.$router.push("/admin/");
+    }
+  }
+};
 </script>
 
