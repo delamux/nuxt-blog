@@ -1,5 +1,5 @@
-import Vuex from 'vuex'
-import axios from 'axios'
+import Vuex from 'vuex';
+import axios from 'axios';
 
 const createStore = () => {
   return new Vuex.Store({
@@ -24,7 +24,7 @@ const createStore = () => {
       nuxtServerInit(vuexContext, context) {
 				return axios.get(process.env.baseUrl + '/posts.json')
 					.then(response => {
-						const postsArray  = []
+						const postsArray  = [];
 						for (const key in response.data) {
 							postsArray.push({ ...response.data[key], id: key })
 						}
